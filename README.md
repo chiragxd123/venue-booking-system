@@ -1,4 +1,3 @@
-
 # Venue Booking System
 
 A **Laravel**-based backend for managing venues, bookings, and availability. This project provides RESTful API endpoints for creating and managing venues, handling bookings (with date conflict checks), and blocking specific dates for venue availability.
@@ -147,6 +146,14 @@ php artisan serve
 }
 ```
 
+**Example (Search Venues)**:
+
+```bash
+GET /api/venues?location=Mumbai&capacity=200
+```
+
+---
+
 ### Bookings
 
 - `GET /api/bookings`
@@ -155,35 +162,13 @@ php artisan serve
 - `PUT /api/bookings/{id}`
 - `DELETE /api/bookings/{id}`
 
-**Example (Create Booking)**:
-
-**Request**:
-```json
-{
-  "venue_id": 1,
-  "user_name": "Rahul Sharma",
-  "user_email": "rahul@example.com",
-  "start_date": "2025-05-01",
-  "end_date": "2025-05-03"
-}
-```
+---
 
 ### Availabilities
 
 - `GET /api/availabilities`
 - `POST /api/availabilities`
 - `DELETE /api/availabilities/{id}`
-
-**Example (Block Date)**:
-
-**Request**:
-```json
-{
-  "venue_id": 1,
-  "blocked_date": "2025-05-05",
-  "reason": "Maintenance"
-}
-```
 
 ---
 
