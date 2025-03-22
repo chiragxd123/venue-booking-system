@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
@@ -15,7 +16,9 @@ return new class extends Migration {
             $table->string('name');
             $table->string('location');
             $table->integer('capacity');
-            $table->json('amenities')->nullable(); 
+            $table->text('description')->nullable(); // Detailed venue description
+            $table->json('images')->nullable();        // Gallery of images (store URLs as JSON)
+            $table->decimal('price', 8, 2)->nullable();  // Pricing information (base price)
             $table->timestamps();
         });
     }
