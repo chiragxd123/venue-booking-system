@@ -17,7 +17,6 @@ class Booking extends Model
         'end_date',
     ];
 
-    // A booking belongs to a venue
     public function venue()
     {
         return $this->belongsTo(Venue::class);

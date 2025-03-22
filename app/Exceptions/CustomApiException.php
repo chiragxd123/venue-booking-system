@@ -24,10 +24,15 @@ class CustomApiException extends Exception
     {
         return response()->json([
             'success' => false,
-            'error'   => [
-                'code'    => $this->status,
+            'error' => [
+                'code' => $this->status,
                 'message' => $this->getMessage(),
             ],
         ], $this->status);
+    }
+
+    public static function notFound($message = "Resource not found")
+    {
+        return new static($message, 404);
     }
 }

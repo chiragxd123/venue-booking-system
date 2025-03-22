@@ -13,18 +13,16 @@ class Venue extends Model
         'name',
         'location',
         'capacity',
-        'description', // Detailed venue description
+        'description', 
         'images',      // Gallery of images (JSON)
-        'price',       // Pricing information
+        'price',       
     ];
 
-    // A venue can have many bookings
     public function bookings()
     {
         return $this->hasMany(Booking::class);
     }
 
-    // A venue can have many availabilities (blocked dates)
     public function availabilities()
     {
         return $this->hasMany(Availability::class);

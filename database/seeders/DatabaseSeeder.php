@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             VenueSeeder::class,
+            BookingSeeder::class,
+            AvailabilitySeeder::class,
         ]);
     }
 }

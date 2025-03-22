@@ -15,7 +15,6 @@ class Availability extends Model
         'reason',
     ];
 
-    // An availability belongs to a venue
     public function venue()
     {
         return $this->belongsTo(Venue::class);
